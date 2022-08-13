@@ -16,95 +16,113 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="topo">
-        <h1>DrivenEats</h1>
-        <p>Sua comida em 6 minutos</p>
+    <div class="tela-fechamento esconder">
+        <div class="carrinho">
+            <button class="voltar" onclick="voltar()"><p>Voltar</p></button>
+        </div>
     </div>
-    <div class="conteudo">
+    <div class="website">
+        <div class="topo">
+            <h1>DrivenEats</h1>
+            <p>Sua comida em 6 minutos</p>
+        </div>
+        <div class="conteudo">
+            <div class="espaçamento-topo-rodape"></div>
+
+            <h1>Primeiro, seu prato</h1>
+            <div class="painel painel1">
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+            </div>
+
+            <h1>Agora, sua bebida</h1>
+            <div class="painel painel2">
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+            </div>
+
+            <h1>Por fim, sua sobremesa</h1>
+            <div class="painel painel3">
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="feijoada.jpeg">
+                    <h1>Feijoada</h1>
+                    <h2>Feijoada completa</h2>
+                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                </div>
+                </button>
+        </div>
         <div class="espaçamento-topo-rodape"></div>
-        <h1>Primeiro, seu prato</h1>
-        <div class="painel">
-                <div class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <p>Feijoada completa</p>
-                    <p>R$ 28,99</p>
-                </div>
-                </div>
-                <div class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <p>Feijoada completa</p>
-                    <p>R$ 28,99</p>
-                </div>
-                </div>
-                <div class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <p>Feijoada completa</p>
-                    <p>R$ 28,99</p>
-                </div>
-                </div>
         </div>
-        <h1>Agora, sua bebida</h1>
-        <div class="painel">
-                <div class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <p>Feijoada completa</p>
-                    <p>R$ 28,99</p>
-                </div>
-                </div>
-                <div class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <p>Feijoada completa</p>
-                    <p>R$ 28,99</p>
-                </div>
-                </div>
-                <div class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <p>Feijoada completa</p>
-                    <p>R$ 28,99</p>
-                </div>
-                </div>
+        <div class="rodape">
+            <button class="fechar-pedido desligar-pointer" onclick="fechamento()">
+                <p>Selecione os 3 itens para fechar o pedido</p> 
+            </button>
         </div>
-        <h1>Por fim, sua sobremesa</h1>
-        <div class="painel">
-            <div class="opcao">
-                <div class="conteudo-opcao">
-                <img src="feijoada.jpeg">
-                <h1>Feijoada</h1>
-                <p>Feijoada completa</p>
-                <p>R$ 28,99</p>
-            </div>
-            </div>
-            <div class="opcao">
-                <div class="conteudo-opcao">
-                <img src="feijoada.jpeg">
-                <h1>Feijoada</h1>
-                <p>Feijoada completa</p>
-                <p>R$ 28,99</p>
-            </div>
-            </div>
-            <div class="opcao">
-                <div class="conteudo-opcao">
-                <img src="feijoada.jpeg">
-                <h1>Feijoada</h1>
-                <p>Feijoada completa</p>
-                <p>R$ 28,99</p>
-            </div>
-            </div>
     </div>
-    <div class="espaçamento-topo-rodape"></div>
-    </div>
-    <div class="rodape"></div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
