@@ -1,3 +1,17 @@
+const addPrimeiraOpcao = document.querySelector(".primeiraOpcao")
+
+const addSegundaOpcao = document.querySelector(".segundaOpcao")
+
+const addTerceiraOpcao = document.querySelector(".terceiraOpcao")
+
+const addPrecoPrimeiraOpcao = document.querySelector(".precoPrimeiraOpcao")
+
+const addPrecoSegundaOpcao = document.querySelector(".precoSegundaOpcao")
+
+const addPrecoTerceiraOpcao = document.querySelector(".precoTerceiraOpcao")
+
+const addPrecoTotal = document.querySelector(".preco-total")
+
 function selecionarOpcao(elemento){
 
     if(elemento.parentElement.classList.contains("painel1")){
@@ -124,21 +138,6 @@ function fechamento(){
 
     const precoTotalStr = precoTotal.toFixed(2).toString().replaceAll('.', ',')
 
-
-    const addPrimeiraOpcao = document.querySelector(".primeiraOpcao")
-
-    const addSegundaOpcao = document.querySelector(".segundaOpcao")
-
-    const addTerceiraOpcao = document.querySelector(".terceiraOpcao")
-
-    const addPrecoPrimeiraOpcao = document.querySelector(".precoPrimeiraOpcao")
-
-    const addPrecoSegundaOpcao = document.querySelector(".precoSegundaOpcao")
-
-    const addPrecoTerceiraOpcao = document.querySelector(".precoTerceiraOpcao")
-
-    const addPrecoTotal = document.querySelector(".preco-total")
-
     addPrimeiraOpcao.innerHTML = primeiraOpcao.innerHTML
     addSegundaOpcao.innerHTML = segundaOpcao.innerHTML
     addTerceiraOpcao.innerHTML = terceiraOpcao.innerHTML
@@ -155,3 +154,36 @@ function cancelar(){
     body.style.overflowY = "initial";
     }
 
+function mensagemWhatsapp() {
+    alert('O pedido está quase finalizado, precisamos apenas de algumas informações, não se preocupe, é rapidinho! 💗')
+    const nomeCliente = prompt('Qual o seu nome?')
+    const celularCliente = prompt('Qual o número do seu celular com DDD?')
+    const diaPedido = prompt('Qual data você deseja retirar o seu pedido? (antecedencia minima de 24 horas)')
+    const horarioPedido = prompt('Que horas você deseja retirar o seu pedido? (8:00 às 21:00)')
+    alert('Muito obrigado! Agora é só checar as informações e enviar o seu pedido. Tia Monka agradece, será feito com muito amor e oração 😍')
+
+    const mensagem = 
+    
+    `
+    Cliente: ${nomeCliente}
+
+    Celular: ${celularCliente}
+
+    dia da retirada: ${diaPedido}
+
+    horario da retirada: ${horarioPedido}
+
+    Primeira opção: ${addPrimeiraOpcao.innerHTML}, preço: ${addPrecoPrimeiraOpcao.innerHTML}
+
+    Seguda opção: ${addSegundaOpcao.innerHTML}, preço: ${addPrecoSegundaOpcao.innerHTML}
+
+    Terceira opção: ${addTerceiraOpcao.innerHTML}, preço: ${addPrecoTerceiraOpcao.innerHTML}
+
+    Total: ${addPrecoTotal.innerHTML}
+    
+    `
+
+    const url = 'https://api.whatsapp.com/send?phone=5585998082727&text='+ decodeURI(mensagem)
+    const win = window.open(url, '_blank');
+    win.focus();
+}
