@@ -160,7 +160,7 @@ function mensagemWhatsapp() {
     const celularCliente = prompt('Qual o número do seu celular com DDD?')
     const diaPedido = prompt('Qual data você deseja retirar o seu pedido? (antecedencia minima de 24 horas)')
     const horarioPedido = prompt('Que horas você deseja retirar o seu pedido? (8:00 às 21:00)')
-    alert('Muito obrigado! Agora é só checar as informações e enviar o seu pedido. Tia Monka agradece, será feito com muito amor e oração 😍')
+    alert('Muito obrigado! Você será redirecionado a página do whatsapp. Basta checar as informações e enviar o seu pedido!')
 
     const mensagem = 
     
