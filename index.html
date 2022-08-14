@@ -17,98 +17,183 @@
   </head>
   <body>
     <div class="tela-fechamento esconder">
-        <div class="carrinho">
-            <button class="voltar" onclick="voltar()"><p>Voltar</p></button>
+        <div class="carrinho"> 
+            <div class="titulo-carrinho font-weight-700">
+                <p>Confirme seu pedido</p>
+            </div>
+            <div class="conteudo-carrinho">
+                <div class="carrinho-primeira-opcao">
+                    <div class="total1">
+                        <p class="primeiraOpcao font-weight-400">primeiro</p>
+                        <p class="font-weight-400">R$</p>
+                    </div>
+                    <p class="precoPrimeiraOpcao font-weight-400">preco primeiro</p>
+                </div>
+                <div class="carrinho-segunda-opcao">
+                    <div class="total1">
+                        <p class="segundaOpcao font-weight-400">segundo</p>
+                        <p class="font-weight-400">R$</p>
+                    </div>
+                    <p class="precoSegundaOpcao font-weight-400">preco segundo</p>
+                </div>
+                <div class="carrinho-terceira-opcao">
+                    <div class="total1">
+                        <p class="terceiraOpcao font-weight-400">terceiro</p>
+                        <p class="font-weight-400">R$</p>
+                     </div>
+                    <p class="precoTerceiraOpcao font-weight-400">preco terceiro</p>
+                </div>
+                <div class="total">
+                    <div class="total1">
+                        <p class="font-weight-700">TOTAL</p>
+                        <p class="font-weight-700">R$</p>
+                    </div>
+                    <p class="preco-total font-weight-700">preco total</p>
+                </div>
+            </div>
+            <button class="botao-confirmacao"><p class="font-weight-700">Tudo certo, pode pedir!</p></button>
+            <div class="cancelar " onclick="cancelar()"><p class="font-weight-700">Cancelar</p></div>
         </div>
     </div>
     <div class="website">
         <div class="topo">
-            <h1>DrivenEats</h1>
-            <p>Sua comida em 6 minutos</p>
+            <img src="imagens\Logo-tia-monka.jfif">
+            <div class="infos">
+                <h1>Tia Monka</h1>
+                <p>feito com muito amor e oração</p>
+            </div>
         </div>
         <div class="conteudo">
             <div class="espaçamento-topo-rodape"></div>
 
-            <h1>Primeiro, seu prato</h1>
+            <h1>Bolos Fofos</h1>
             <div class="painel painel1">
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                        <img src=".\imagens\bolo-branco.jfif">
+                        <h1>Bolo ninho</h1>
+                        <h2>Bolo fofo sabor leite ninho</h2>
+                        <div class="caixa-preco">
+                            <p>R$</p>
+                            <p class="preco">60,00</p>
+                        </div>
+                        <ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src=".\imagens\bolo-chocolate.jfif">
+                    <h1>Bolo chocolate</h1>
+                    <h2>Bolo fofo sabor chocolate</h2>
+                    <div class="caixa-preco"><p>R$</p><p class="preco">70,00</p></div><ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
-                </div>
-                </button>
-                <button onclick="selecionarOpcao(this)" class="opcao">
-                    <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
-                </div>
+                        <img src=".\imagens\bolo-mesclado.jfif">
+                        <h1>Bolo mesclado</h1>
+                        <h2>Bolo mesclado metade leite ninho e metade chocolate</h2>
+                        <div class="caixa-preco">
+                            <p>R$</p>
+                            <p class="preco">65,00</p>
+                        </div>
+                        <ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
+                    </div>
                 </button>
             </div>
 
-            <h1>Agora, sua bebida</h1>
+            <h1>Bolos com cobertura</h1>
             <div class="painel painel2">
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                    <img src="imagens\bolo-cobertura-chocolate.jfif">
+                    <h1>Bolo chocolate</h1>
+                    <h2>Bolo com cobertura de chocolate, massa a sua escolha</h2>
+                    <div class="caixa-preco">
+                        <p>R$</p>
+                        <p class="preco">95,00</p>
+                    </div>
+                <ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                        <img src="imagens\bolo-cobertura-ninho.jfif">
+                        <h1>Bolo Leite Ninho</h1>
+                        <h2>Bolo com cobertura de leite Ninho, massa a sua escolha</h2>
+                        <div class="caixa-preco">
+                            <p>R$</p>
+                            <p class="preco">85,00</p>
+                        </div>
+                    <ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                        <img src="imagens\bolo-cobertura-limao.jfif">
+                        <h1>Bolo limão</h1>
+                        <h2>Bolo com cobertura de mousse de limão, massa a sua escolha</h2>
+                        <div class="caixa-preco">
+                            <p>R$</p>
+                            <p class="preco">90,00</p>
+                        </div>
+                        <ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                        <img src="imagens\bolo-cobertura-goiaba.jfif">
+                        <h1>Bolo goiaba</h1>
+                        <h2>Bolo com cobertura de goiaba, massa a sua escolha</h2>
+                        <div class="caixa-preco">
+                            <p>R$</p>
+                            <p class="preco">76,00</p>
+                        </div>
+                        <ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="imagens\bolo meio ninho meio goiaba.jfif">
+                    <h1>Bolo meio a meio (goiaba e leite ninho)</h1>
+                    <h2>Bolo com cobertura meio goiaba e meio leite ninho, massa a sua escolha</h2>
+                    <div class="caixa-preco"><p>R$</p><p class="preco">87,00</p></div><ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
+                </div>
+                </button>
+                <button onclick="selecionarOpcao(this)" class="opcao">
+                    <div class="conteudo-opcao">
+                    <img src="imagens\bolo-cobertura-laranja.jfif">
+                    <h1>Bolo laranja</h1>
+                    <h2>Bolo com cobertura de laranja, massa a sua escolha</h2>
+                    <div class="caixa-preco"><p>R$</p><p class="preco">78,00</p></div><ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
             </div>
 
-            <h1>Por fim, sua sobremesa</h1>
+            <h1>Bebidas</h1>
             <div class="painel painel3">
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                    <img src="imagens\aguacrystal.jpg">
+                    <h1>Água</h1>
+                    <h2>Água Crystal 1.5L</h2>
+                    <div class="caixa-preco"><p>R$</p><p class="preco">5,00</p></div><ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                    <img src="imagens\coca2l.png">
+                    <h1>Coca-Cola</h1>
+                    <h2>Coca-Cola 2L</h2>
+                    <div class="caixa-preco"><p>R$</p><p class="preco">13,00</p></div><ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
                 <button onclick="selecionarOpcao(this)" class="opcao">
                     <div class="conteudo-opcao">
-                    <img src="feijoada.jpeg">
-                    <h1>Feijoada</h1>
-                    <h2>Feijoada completa</h2>
-                    <p>R$ 28,99 <ion-icon class="checkmark-off" name="checkmark-circle-outline"></ion-icon></p>
+                    <img src="imagens\fantauvalaranja.jfif">
+                    <h1>Fanta sabores</h1>
+                    <h2>Fanta laranja ou Fanta uva</h2>
+                    <div class="caixa-preco"><p>R$</p><p class="preco">10,00</p></div><ion-icon class="checkmark-off" name="checkmark-circle"></ion-icon>
                 </div>
                 </button>
         </div>

@@ -10,15 +10,22 @@ body{
     height: 100px;
 }
 
-.topo{
+.topo{  
+    display:flex;
     width:100%;
     height: 100px;
     position:fixed;
     top:0;
     box-shadow: 0 3px 10px;
-    background: #CF2B2B;
+    background: rgb(252,136,110);
     padding:15px;
     z-index: 100;
+}
+
+.topo img{
+    background-color: rgb(252,136,110);
+    border-radius:100%;
+    width: 70px;
 }
 
 .topo h1{
@@ -62,15 +69,19 @@ body{
 .painel{
     display:flex;
     overflow-x: scroll;
-    height: 250px;
+    height: 300px;
     align-items: center;
     margin-bottom:10px;
 }
 
 .opcao{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     background: #FFFFFF;
     height: 90%;
     min-width: 200px;
+    max-width: 200px;
     margin-right: 16px;
     border-radius: 12px;
     box-shadow: 0px 1px 7px -3px;
@@ -78,13 +89,21 @@ body{
 }
 
 .conteudo-opcao{
-    width:100%;
-    height: 100%;
-    padding:8px;
+    position: relative;
+    width:90%;
+    height: 90%;
     text-align:start;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.caixa-preco{
+    display:flex;
+}
+
+.caixa-preco p:first-child{
+    margin-right:8px;
 }
 
 .conteudo-opcao img{
@@ -119,18 +138,16 @@ body{
     font-size: 16px;
     line-height: 19px;
     color: #000000;
-    position:relative;
     z-index: 0;
 }
 
 .checkmark-on{
     display:initial;
-    font-size: 35px;
-    margin-left: 80px;
+    font-size: 20px;
     position: absolute;
-    bottom:-5px;
+    bottom:0px;
     right: 0px;
-    color:lawngreen;
+    color:#32B72F;;
 }
 
 .checkmark-off{
@@ -138,10 +155,7 @@ body{
 }
 
 .selecionado{
-    border: 6px solid lawngreen;
-    border-radius: 12px;
-    height: 100%;
-    min-width: 240px;
+    box-shadow: 0 0 0 6px #32B72F inset;
 }
 
 .rodape{
@@ -150,6 +164,7 @@ body{
     align-items: center;
     width: 100%;
     height: 100px;
+    box-shadow: 0 3px 10px;
     position:fixed;
     bottom:0;
     background-color: #FFFFFF;
@@ -159,20 +174,13 @@ body{
 .fechar-pedido{
     background-color: #494949;
     height: 80%;
-    width: 60%;
-    border-radius: 20px;
+    width: 90%;
+    border-radius: 150px;
+    box-shadow: none;
     border-color: #FFFFFF;
 }
 
-.ligar-pointer{
-    pointer-events: auto;
-}
-
-.desligar-pointer{
-    pointer-events: none;
-}
-
-.fechar-pedido > p{
+.fechar-pedido > p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -183,8 +191,16 @@ body{
     color: #FFFFFF;
 }
 
+.ligar-pointer{
+    pointer-events: auto;
+}
+
+.desligar-pointer{
+    pointer-events: none;
+}
+
 .fechamento-habilitado{
-    background-color: lawngreen;
+    background-color: #32B72F;;
 }
 
 .tela-fechamento{
@@ -196,14 +212,75 @@ body{
     left:0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 10;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 101;
 }
 
 .carrinho{
-    height: 50%;
-    width: 70%;
-    background-color: aqua;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #50D074;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+}
+.carrinho p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+}
+
+.conteudo-carrinho{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 40%;
+    
+}
+
+.conteudo-carrinho > *{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.titulo-carrinho{
+    margin-bottom: 20px;
+}
+
+.botao-confirmacao{
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    border: none;
+    height: 60px;
+    width: 90%;
+    margin-bottom:30px;
+}
+
+.botao-confirmacao > p {
+    color: #50D074
+}
+
+
+.font-weight-400{
+    font-weight: 400;
+}
+
+.font-weight-700{
+    font-weight: 700;
+}
+
+.total1{
+    display:flex;
+    justify-content: space-between;
+    width:80%;
 }
 
 .esconder{

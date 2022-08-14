@@ -104,15 +104,54 @@ function alternarFechamento(){
 
 function fechamento(){
     const telaFechamento = document.querySelector(".tela-fechamento")
-    console.log(telaFechamento)
     telaFechamento.classList.remove("esconder")
     const body = document.body;
     body.style.overflowY = "hidden";
+
+    const primeiraOpcao = document.querySelector(".painel1 .selecionado h1")
+
+    const segundaOpcao = document.querySelector(".painel2 .selecionado h1")
+
+    const terceiraOpcao = document.querySelector(".painel3 .selecionado h1")
+
+    const precoPrimeiraOpcao = document.querySelector(".painel1 .selecionado .preco")
+
+    const precoSegundaOpcao = document.querySelector(".painel2 .selecionado .preco")
+
+    const precoTerceiraOpcao = document.querySelector(".painel3 .selecionado .preco")
+
+    const precoTotal = Number(precoPrimeiraOpcao.innerHTML.replaceAll(',', '.')) + Number(precoSegundaOpcao.innerHTML.replaceAll(',', '.')) + Number(precoTerceiraOpcao.innerHTML.replaceAll(',', '.'))
+
+    const precoTotalStr = precoTotal.toFixed(2).toString().replaceAll('.', ',')
+
+
+    const addPrimeiraOpcao = document.querySelector(".primeiraOpcao")
+
+    const addSegundaOpcao = document.querySelector(".segundaOpcao")
+
+    const addTerceiraOpcao = document.querySelector(".terceiraOpcao")
+
+    const addPrecoPrimeiraOpcao = document.querySelector(".precoPrimeiraOpcao")
+
+    const addPrecoSegundaOpcao = document.querySelector(".precoSegundaOpcao")
+
+    const addPrecoTerceiraOpcao = document.querySelector(".precoTerceiraOpcao")
+
+    const addPrecoTotal = document.querySelector(".preco-total")
+
+    addPrimeiraOpcao.innerHTML = primeiraOpcao.innerHTML
+    addSegundaOpcao.innerHTML = segundaOpcao.innerHTML
+    addTerceiraOpcao.innerHTML = terceiraOpcao.innerHTML
+    addPrecoPrimeiraOpcao.innerHTML = precoPrimeiraOpcao.innerHTML
+    addPrecoSegundaOpcao.innerHTML =  precoSegundaOpcao.innerHTML
+    addPrecoTerceiraOpcao.innerHTML = precoTerceiraOpcao.innerHTML
+    addPrecoTotal.innerHTML = precoTotalStr
 }
 
-function voltar(){
+function cancelar(){
     const telaFechamento = document.querySelector(".tela-fechamento")
     telaFechamento.classList.add("esconder")
     const body = document.body;
     body.style.overflowY = "initial";
     }
+
