@@ -16,7 +16,116 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="tela-fechamento esconder">
+    
+    <div class="tela-fechamento esconder pergunta-cadastro">
+        <div class="carrinho">
+            <p>Você já possui cadastro?</p>
+            <div class="botoes">
+                <button onclick='trocarTela(".tela-informar-cadastro", ".pergunta-cadastro")')>Sim</button>
+                <button onclick='trocarTela(".tela-cadastro", ".pergunta-cadastro")')>Não</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tela-fechamento tela-informar-cadastro esconder">
+        <div class="carrinho">
+            <div class="informar-cadastro">
+                <p>Por gentileza, informe os seus dados para localizarmos seu cadastro.</p>
+            </div>
+            <div class = 'conteudo-informar-cadastro'>
+                <div class="informar-nome">
+                    Nome: <input id="informar-nome" type="text" name="Nome"/> 
+                </div>
+                <div class="informar-celular">
+                    Celular: <input id="informar-celular" type="text" name="Celular"/> 
+                </div>
+            </div>
+            <div class="botoes">
+                <button onclick="confirmarInformacao('.confirmar-informacao', '.tela-informar-cadastro')">Confirmar</button>
+                <button onclick="cancelar('.tela-informar-cadastro')">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tela-fechamento confirmar-informacao esconder">
+        <div class="carrinho">
+            <div class="conteudo-confirmacao-cadastro">
+                <div class="confirmacao-nome">
+                    Nome: <p id="confirmacao-nome-cadastrado"></p>
+                </div>
+                <div class="confirmacao-celular">
+                    Celular: <p id="confirmacao-celular-cadastrado"></p>
+                </div>
+            </div>
+            <div class="botoes">
+                <button onclick="fechamento('.fechamento-pedido', '.confirmar-informacao')">Confirmar</button>
+                <button onclick="cancelar('.confirmar-informacao')">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tela-fechamento esconder tela-cadastro">
+        <div class="carrinho">
+            <div class="titulo-cadastro">
+                <p>Cadastro de cliente</p>
+            </div>
+            <div class="conteudo-cadastro">
+                <div class="cadastro-nome">
+                    Nome: <input id="cadastro-nome" type="text" name="Nome" /> 
+                </div>
+                <div class="cadastro-celular">
+                    Celular: <input id="cadastro-celular" type="text" name="Celular"  /> 
+                </div>
+                <div class="cadastro-rua">
+                    Rua: <input id="cadastro-rua" type="text" name="Rua"  /> 
+                </div>
+                <div class="cadastro-numero">
+                    Numero: <input id="cadastro-numero" type="text" name="Numero" /> 
+                </div>
+                <div class="cadastro-bairro">
+                    Bairro: <input id="cadastro-bairro" type="text" name="Bairro"  /> 
+                </div>
+                <div class="cadastro-complemento">
+                    Complemento: <input id="cadastro-complemento" type="text" name="Complemento"  /> 
+                </div>
+            </div>
+            <div class="botoes">
+                <button onclick="confirmarCadastro('.confirmar-cadastro', '.tela-cadastro')">Confirmar</button>
+                <button onclick="cancelar('.tela-cadastro')">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tela-fechamento confirmar-cadastro esconder">
+        <div class="carrinho">
+            <div class="conteudo-confirmacao-cadastro">
+                <div class="confirmacao-nome">
+                    Nome: <p id="confirmacao-nome"></p>
+                </div>
+                <div class="confirmacao-celular">
+                    Celular: <p id="confirmacao-celular"></p>
+                </div>
+                <div class="confirmacao-rua">
+                    Rua: <p id="confirmacao-rua"></p> 
+                </div>
+                <div class="confirmacao-numero">
+                    Numero: <p id="confirmacao-numero"></p> 
+                </div>
+                <div class="confirmacao-bairro">
+                    Bairro: <p id="confirmacao-bairro"></p> 
+                </div>
+                <div class="confirmacao-complemento">
+                    Complemento: <p id="confirmacao-complemento"></p> 
+                </div>
+            </div>
+            <div class="botoes">
+                <button onclick="novoCliente('.fechamento-pedido', '.confirmar-cadastro')">Confirmar</button>
+                <button onclick="cancelar('.confirmar-cadastro')">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tela-fechamento fechamento-pedido esconder">
         <div class="carrinho"> 
             <div class="titulo-carrinho font-weight-700">
                 <p>Confirme seu pedido</p>
@@ -52,9 +161,10 @@
                 </div>
             </div>
                 <button onclick="mensagemWhatsapp()" class="botao-confirmacao"><p class="font-weight-700">Tudo certo, pode pedir!</p></button>
-            <div class="cancelar " onclick="cancelar()"><p class="font-weight-700">Cancelar</p></div>
+            <div class="cancelar " onclick="cancelar('.fechamento-pedido')"><p class="font-weight-700">Cancelar</p></div>
         </div>
     </div>
+
     <div class="website">
         <div class="topo">
             <img src="imagens\Logo-tia-monka.jfif">
@@ -200,7 +310,7 @@
         <div class="espaçamento-topo-rodape"></div>
         </div>
         <div class="rodape">
-            <button class="fechar-pedido desligar-pointer" onclick="fechamento()">
+            <button class="fechar-pedido desligar-pointer" onclick="perguntaCadastro('.pergunta-cadastro')">
                 <p>Selecione os 3 itens para fechar o pedido</p> 
             </button>
         </div>

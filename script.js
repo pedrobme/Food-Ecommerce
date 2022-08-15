@@ -12,6 +12,21 @@ const addPrecoTerceiraOpcao = document.querySelector(".precoTerceiraOpcao")
 
 const addPrecoTotal = document.querySelector(".preco-total")
 
+let novoClienteConst = 0;
+
+let nome;
+
+let celular;
+
+let rua;
+
+let numero;
+
+let bairro;
+
+let complemento;
+
+
 function selecionarOpcao(elemento){
 
     if(elemento.parentElement.classList.contains("painel1")){
@@ -116,12 +131,12 @@ function alternarFechamento(){
 }
 }
 
-function fechamento(){
-    const telaFechamento = document.querySelector(".tela-fechamento")
-    telaFechamento.classList.remove("esconder")
+function fechamento(removeEsconder, addEsconder){
+    document.querySelector(addEsconder).classList.add("esconder")
+    document.querySelector(removeEsconder).classList.remove("esconder")
     const body = document.body;
     body.style.overflowY = "hidden";
-
+    
     const primeiraOpcao = document.querySelector(".painel1 .selecionado h1")
 
     const segundaOpcao = document.querySelector(".painel2 .selecionado h1")
@@ -147,43 +162,83 @@ function fechamento(){
     addPrecoTotal.innerHTML = precoTotalStr
 }
 
-function cancelar(){
-    const telaFechamento = document.querySelector(".tela-fechamento")
-    telaFechamento.classList.add("esconder")
+function cancelar(addEsconder){
+    document.querySelector(addEsconder).classList.add("esconder")
     const body = document.body;
     body.style.overflowY = "initial";
     }
 
 function mensagemWhatsapp() {
-    alert('O pedido está quase finalizado, precisamos apenas de algumas informações, não se preocupe, é rapidinho! 💗')
-    const nomeCliente = prompt('Qual o seu nome?')
-    const celularCliente = prompt('Qual o número do seu celular com DDD?')
-    const diaPedido = prompt('Qual data você deseja retirar o seu pedido? (antecedencia minima de 24 horas)')
-    const horarioPedido = prompt('Que horas você deseja retirar o seu pedido? (8:00 às 21:00)')
-    alert('Muito obrigado! Você será redirecionado a página do whatsapp. Basta checar as informações e enviar o seu pedido!')
+    console.log('oi')
+    if(novoClienteConst==0){
 
-    const mensagem = 
-    
-    `
-    Cliente: ${nomeCliente}
+    mensagem = `*Cliente já possui cadastro.*\n\nCliente: ${nome}\nCelular: ${celular}\n\nPedido:\n-${addPrimeiraOpcao.innerHTML} R$${addPrecoPrimeiraOpcao.innerHTML}\n-${addSegundaOpcao.innerHTML} R$${addPrecoSegundaOpcao.innerHTML}\n-${addTerceiraOpcao.innerHTML} R$${addPrecoTerceiraOpcao.innerHTML}\n\n-Total: R$${addPrecoTotal.innerHTML}.`
+    }
 
-    Celular: ${celularCliente}
+    if(novoClienteConst==1){
+    mensagem = `*Cliente novo! Dados do cadastro:*\nNome: ${nome}\nCelular: ${celular}\nRua: ${rua}\nNumero: ${numero}\nBairro: ${bairro}\nComplemento: ${complemento}\n\n\nPedido:\n-${addPrimeiraOpcao.innerHTML} R$${addPrecoPrimeiraOpcao.innerHTML}\n-${addSegundaOpcao.innerHTML} R$${addPrecoSegundaOpcao.innerHTML}\n-${addTerceiraOpcao.innerHTML} R$${addPrecoTerceiraOpcao.innerHTML}\n\n-Total: R$${addPrecoTotal.innerHTML}.`
+    }
 
-    dia da retirada: ${diaPedido}
-
-    horario da retirada: ${horarioPedido}
-
-    Primeira opção: ${addPrimeiraOpcao.innerHTML}, preço: ${addPrecoPrimeiraOpcao.innerHTML}
-
-    Seguda opção: ${addSegundaOpcao.innerHTML}, preço: ${addPrecoSegundaOpcao.innerHTML}
-
-    Terceira opção: ${addTerceiraOpcao.innerHTML}, preço: ${addPrecoTerceiraOpcao.innerHTML}
-
-    Total: ${addPrecoTotal.innerHTML}
-    
-    `
-
-    const url = 'https://api.whatsapp.com/send?phone=5585998082727&text='+ decodeURI(mensagem)
+    let encode = encodeURIComponent(mensagem)
+    const url = 'https://api.whatsapp.com/send?phone=5585998082727&text='+encode
     const win = window.open(url, '_blank');
     win.focus();
+
+    novoClienteConst=0;
+}
+
+function perguntaCadastro(removeEsconder){
+    document.querySelector(removeEsconder).classList.remove('esconder')
+}
+
+function trocarTela(removeEsconder, addEsconder){
+    document.querySelector(addEsconder).classList.add('esconder')
+    document.querySelector(removeEsconder).classList.remove('esconder')
+}
+
+function confirmarCadastro(removeEsconder,addEsconder){
+    document.querySelector(addEsconder).classList.add('esconder')
+    document.querySelector(removeEsconder).classList.remove('esconder')
+
+    nome = document.getElementById("cadastro-nome").value;
+    document.getElementById("confirmacao-nome").innerHTML = nome;
+    document.getElementById("cadastro-nome").value = null;
+
+    celular = document.getElementById("cadastro-celular").value;
+    document.getElementById("confirmacao-celular").innerHTML = celular;
+    document.getElementById("cadastro-celular").value = null;
+
+    rua = document.getElementById("cadastro-rua").value;
+    document.getElementById("confirmacao-rua").innerHTML = rua;
+    document.getElementById("cadastro-rua").value = null;
+
+    numero = document.getElementById("cadastro-numero").value;
+    document.getElementById("confirmacao-numero").innerHTML = numero;
+    document.getElementById("cadastro-numero").value = null;
+
+    bairro = document.getElementById("cadastro-bairro").value;
+    document.getElementById("confirmacao-bairro").innerHTML = bairro;
+    document.getElementById("cadastro-bairro").value = null;
+
+    complemento = document.getElementById("cadastro-complemento").value;
+    document.getElementById("confirmacao-complemento").innerHTML = complemento;
+    document.getElementById("cadastro-complemento").value = null;
+}
+
+function confirmarInformacao(removeEsconder,addEsconder){
+    document.querySelector(addEsconder).classList.add('esconder')
+    document.querySelector(removeEsconder).classList.remove('esconder')
+
+    nome = document.getElementById("informar-nome").value;
+    document.getElementById("confirmacao-nome-cadastrado").innerHTML = nome;
+    document.getElementById("informar-nome").value = null;
+
+    celular = document.getElementById("informar-celular").value;
+    document.getElementById("confirmacao-celular-cadastrado").innerHTML = celular;
+    document.getElementById("informar-celular").value = null;
+}
+
+function novoCliente(removeEsconder,addEsconder){
+    novoClienteConst = 1;
+    fechamento(removeEsconder,addEsconder)
 }
