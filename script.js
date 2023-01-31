@@ -180,7 +180,7 @@ function mensagemWhatsapp() {
     }
 
     let encode = encodeURIComponent(mensagem)
-    const url = 'https://api.whatsapp.com/send?phone=5585998082727&text='+encode
+    const url = 'https://api.whatsapp.com/send?phone=5585999999999&text='+encode
     const win = window.open(url, '_blank');
     win.focus();
 
